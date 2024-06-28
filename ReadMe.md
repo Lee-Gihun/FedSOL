@@ -40,6 +40,9 @@ There are two ways to change the configurations:
 - `-- algo_name`: algorithm name of the experiment (e.g., `fedavg`, `fedsol_adaptive`)
 - `--seed`: random seed
 
+### Notes
+*As this code has been refactored for efficiency and readability, performance may potentially differ slightly from the reported tendency in some cases. If you find discrepancies, please open an issue.*
+
 ## Reference Github
 
 We refer to the following repositories:
