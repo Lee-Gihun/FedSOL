@@ -1,0 +1,10 @@
+*.ipynb
+*.ipynb_checkpoints/
+__pycache__/
+results/
+weights/
+wandb/
+data/
+/.vscode
+*.npy
+*.pth

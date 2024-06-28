@@ -1,0 +1,43 @@
+{
+    "data_setups":{
+        "root": "./data",
+        "dataset_name": "cifar10",
+        "batch_size": 50,
+        "n_clients": 100,
+        "partition": {
+            "method": "lda",
+            "alpha": 0.1,
+            "shard_per_client": 2
+        }
+    },
+    "train_setups":{
+        "algo": {
+            "name": "fedsol_fixed",
+            "params": {"rho": 1.0, "perturb_head": true, "perturb_body": true}
+        },
+        "scenario": {
+            "n_rounds": 300,
+            "sample_ratio": 0.1,
+            "local_epochs": 5,
+            "device": "cuda:0"
+        },
+        "model":{
+            "name": "fedavg_cifar",
+            "params": {}
+        },
+        "optimizer":{
+            "params": {"lr": 0.01, "momentum":0.9, "weight_decay": 1e-5}
+        },
+        "scheduler":{
+            "enabled": true,
+            "name": "step",
+            "params": {"gamma":0.99, "step_size": 1}
+        },
+        "seed": 2023
+    },
+    "wandb_setups":{
+        "project": "AAAI2023",
+        "group": "FedSoL",
+        "name": "fedsol_fixed"
+    }
+}
